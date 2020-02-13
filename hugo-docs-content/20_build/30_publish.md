@@ -3,6 +3,9 @@ title = "Publish"
 chapter = false
 weight = 30
 +++
+## Cleanup 
+* Remove the directory docs, hugo-docs-content, samples, and public.  
+* Cleanup any unused artifacts, be sure to look in static/images
 
 ## Publish
 
