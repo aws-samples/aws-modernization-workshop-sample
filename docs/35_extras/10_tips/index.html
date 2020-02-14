@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/aws-modernization-workshop-sample/images/favicon.png" type="image/png">
 
-    <title>What&#39;s the story? :: AWS Modernization Workshop Sample Docs</title>
+    <title>Tips :: AWS Modernization Workshop Sample Docs</title>
 
     
     <link href="/aws-modernization-workshop-sample/css/nucleus.css?1581661357" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/aws-modernization-workshop-sample/10_plan/1_story/">
+  <body class="" data-url="/aws-modernization-workshop-sample/35_extras/10_tips/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -76,7 +76,7 @@
   
     
     <li data-nav-id="/aws-modernization-workshop-sample/10_plan/" title="Plan" class="dd-item 
-        parent
+        
         
         
         ">
@@ -102,7 +102,7 @@
  
   
     
-      <li data-nav-id="/aws-modernization-workshop-sample/10_plan/1_story/" title="What&#39;s the story?" class="dd-item active">
+      <li data-nav-id="/aws-modernization-workshop-sample/10_plan/1_story/" title="What&#39;s the story?" class="dd-item ">
         <a href="/aws-modernization-workshop-sample/10_plan/1_story/">
         What&#39;s the story?
         <i class="fas fa-check read-icon"></i>
@@ -282,7 +282,7 @@
   
     
     <li data-nav-id="/aws-modernization-workshop-sample/35_extras/" title="Extras" class="dd-item 
-        
+        parent
         
         
         ">
@@ -327,7 +327,7 @@
  
   
     
-      <li data-nav-id="/aws-modernization-workshop-sample/35_extras/10_tips/" title="Tips" class="dd-item ">
+      <li data-nav-id="/aws-modernization-workshop-sample/35_extras/10_tips/" title="Tips" class="dd-item active">
         <a href="/aws-modernization-workshop-sample/35_extras/10_tips/">
         Tips
         <i class="fas fa-check read-icon"></i>
@@ -476,7 +476,7 @@
             
           
           
-            <a href='/aws-modernization-workshop-sample/'>Modernization Workshop Documentation</a> > <a href='/aws-modernization-workshop-sample/10_plan/'>Plan</a> > What's the story?
+            <a href='/aws-modernization-workshop-sample/'>Modernization Workshop Documentation</a> > <a href='/aws-modernization-workshop-sample/35_extras/'>Extras</a> > Tips
           
          
           
@@ -495,8 +495,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#build-new-or-use-an-existing-workshop">Build new or use an existing workshop?</a></li>
-<li><a href="#examples-of-some-existing-workshops">Examples of some existing workshops</a></li>
+<li>
+<ul>
+<li><a href="#additional-editing-tips">Additional editing tips</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -516,7 +518,7 @@
           
             <h1>
               
-              What&#39;s the story?
+              Tips
             </h1>
           
 
@@ -526,23 +528,17 @@
 
 
 
-<p>Think about what you want to accomplish and how you want to educate users about your product.  What is the use case or problem that your product solves for the end user and develop a story around it.  Two things to have in the back of your mind while you think about this: 1. Customers don&rsquo;t buy products they buy solutions to their problems and 2. Make learning fun, have a nice story that can entertain them while educating them at the same time.  We have all sat through those boring click and paste workshops, don&rsquo;t make yours one of them.</p>
-
-<h3 id="build-new-or-use-an-existing-workshop">Build new or use an existing workshop?</h3>
-
-<p>This decision will come down to the story you are trying to tell.  If your product or solution is a simple integration to a bigger product or story then you might want to consider building onto an existing workshop.  If you have a full story to tell or their is no existing workshop that fits your need then its best to create your own stand alone workshop.</p>
-
-
-<div class="notices tip" ><p>Workshops are meant to evolve, so a good story will be extended by other partners, SA&rsquo;s, and the public.  The workshop is open source and that how it will grow.</p>
-</div>
-
-
-<h3 id="examples-of-some-existing-workshops">Examples of some existing workshops</h3>
+<h4 id="additional-editing-tips">Additional editing tips</h4>
 
 <ul>
-<li><a href="https://snyk.modernize.awsworkshop.io/" target="_blank">https://snyk.modernize.awsworkshop.io/</a></li>
-<li><a href="https://contrastsecurity.modernize.awsworkshop.io/" target="_blank">https://contrastsecurity.modernize.awsworkshop.io/</a></li>
-<li><a href="https://atlassian.awsworkshop.io/" target="_blank">https://atlassian.awsworkshop.io/</a></li>
+<li>Use Cloud9 for the IDE and workshop host for all participants.  Having users setup their local workstations doesn&rsquo;t work very well and often contributes to a poor user experience.</li>
+<li>Review the flow of other workshops.</li>
+<li>To create a new page, copy another document and rename it.  The name is only important to the builders, but the actual name that shows in the navigation is the title at the top of the document.<br /></li>
+<li>If you want to create a new page between 10 and 20 you can use any number in the name as long as it&rsquo;s sequentially between 10 and 20.  Don&rsquo;t forget to appropriately set the weight in the top section.</li>
+<li>Place all images in {repo_root}/static/images.  There are several examples of using images in the sample content.</li>
+<li>Provide users with sample output in <code>&lt;pre&gt; &lt;/pre&gt;</code> tags so that the copy to clipboard function is not there.  No reason to copy example output to the clipboard.</li>
+<li>DO NOT assume that the user has any exposure to AWS or your product.  Everything needs to be explained and all command or areas in the UI you want the user to go to needs to be provided.  Screen shots or examples work well for this, especially on busy UI&rsquo;s.<br /></li>
+<li>Use an architecture diagram in your workshop.  Show people what are going to deploy.  Visuals work wonders when educating people about abstract concepts.<br /></li>
 </ul>
 
 
@@ -581,58 +577,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -673,54 +619,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -774,6 +672,110 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -814,10 +816,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/aws-modernization-workshop-sample/10_plan/" title="Plan"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/aws-modernization-workshop-sample/35_extras/1_tools/" title="Tools"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/aws-modernization-workshop-sample/10_plan/2_plan/" title="Plan the Workshop" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/aws-modernization-workshop-sample/35_extras/20_samples/" title="Samples" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

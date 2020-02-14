@@ -66,8 +66,12 @@ The folder names are stubs and should be edited to make clear what type of conte
 When creating additional sections or pages, just copy the files from another section, rename and edit.  
 {{% /notice %}}
 
-#### CloudFormation and CodeBuild samples
-In the workshop sample there is a sample directory with examples of CloudFormation Templates and CodeBuild buildspec.yml files.  Feel free to leverage these samples in your solution.  **Note** this is a workshop so samples are not meant to be best practice, but more for educational purposes only.  So if your workshop uses an RDS instance there is no reason to setup replication, backups, and everything else that goes along with making a robust solution, this is of course unless your workshop is on building robust fault tolerant solutions :)
+#### Samples and building blocks
+In the repo https://github.com/aws-samples/aws-modernization-workshop-base there are several examples and content that you can copy and reuse in your workshop. 
+* content directory - content for creating an account and Cloud9 instance.  Don't forget the images in static/images
+* samples directory is CloudFormation, CodeBuild, and other samples.  The CloudFormation folder is available publicly at https://modernization-workshop-bucket.s3-us-west-2.amazonaws.com/cfn/ so you can leverage existing templates for nesting and one-click deployments. 
+
+Feel free to leverage these samples in your solution.  **Note** this is a workshop so samples are not meant to be best practice, but more for educational purposes only.  So if your workshop uses an RDS instance there is no reason to setup replication, backups, and everything else that goes along with making a robust solution, this is of course unless your workshop is on building robust fault tolerant solutions ;)
 
 #### Scripts, Artifacts, custom CloudFormation templates
 If your workshop includes custom scripts, artifacts, etc... you should save them to the content folder where they will be needed.  As an example, if I have a getting_started.sh that is used in the First Section, I would place that script in `content/10_first_section`
@@ -75,15 +79,5 @@ If your workshop includes custom scripts, artifacts, etc... you should save them
 #### Special markdown samples
 See content/10_first_section/1_page.md for examples of short codes and special template code to help your workshop pop.
 
-#### Additional editing tips 
-
-* Use Cloud9 for the IDE and workshop host for all participants.  Having users setup their local workstations doesn't work very well and often contributes to a poor user experience.
-* Review the flow of other workshops. 
-* To create a new page, copy another document and rename it.  The name is only important to the builders, but the actual name that shows in the navigation is the title at the top of the document.  
-* If you want to create a new page between 10 and 20 you can use any number in the name as long as it's sequentially between 10 and 20.  Don't forget to appropriately set the weight in the top section.
-* Place all images in {repo_root}/static/images.  There are several examples of using images in the sample content.
-* Provide users with sample output in `<pre> </pre>` tags so that the copy to clipboard function is not there.  No reason to copy example output to the clipboard.
-* DO NOT assume that the user has any exposure to AWS or your product.  Everything needs to be explained and all command or areas in the UI you want the user to go to needs to be provided.  Screen shots or examples work well for this, especially on busy UI's.  
-* Use an architecture diagram in your workshop.  Show people what are going to deploy.  Visuals work wonders when educating people about abstract concepts.  
 
 

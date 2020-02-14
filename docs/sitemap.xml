@@ -11,6 +11,10 @@
   </url>
   
   <url>
+    <loc>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/1_tools/</loc>
+  </url>
+  
+  <url>
     <loc>https://aws-samples.github.io/aws-modernization-workshop-sample/10_plan/1_story/</loc>
   </url>
   
@@ -27,7 +31,15 @@
   </url>
   
   <url>
+    <loc>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/10_tips/</loc>
+  </url>
+  
+  <url>
     <loc>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/20_samples/</loc>
   </url>
   
   <url>
@@ -40,6 +52,10 @@
   
   <url>
     <loc>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/30_publish/</loc>
+  </url>
+  
+  <url>
+    <loc>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/</loc>
   </url>
   
   <url>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Extras on AWS Modernization Workshop Sample Docs</title>
+    <link>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/</link>
+    <description>Recent content in Extras on AWS Modernization Workshop Sample Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tools</title>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/1_tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/1_tools/</guid>
+      <description>Building a workshop leverages several tools to make things a bit easier:
+ Git Hugo - https://gohugo.io/ Hugo learn theme - https://learn.netlify.com/en/ CloudFormation templates - https://github.com/aws-samples/aws-modernization-workshop-base/tree/master/samples/cloudformation Code Build examples - https://github.com/aws-samples/aws-modernization-workshop-base/tree/master/samples/codebuild Skitch - Image editing for annotations in images https://apps.apple.com/us/app/skitch-snap-mark-up-share/id425955336?mt=12 VSCode IDE - https://code.visualstudio.com/   </description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/10_tips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/10_tips/</guid>
+      <description>Additional editing tips  Use Cloud9 for the IDE and workshop host for all participants. Having users setup their local workstations doesn&amp;rsquo;t work very well and often contributes to a poor user experience. Review the flow of other workshops. To create a new page, copy another document and rename it. The name is only important to the builders, but the actual name that shows in the navigation is the title at the top of the document.</description>
+    </item>
+    
+    <item>
+      <title>Samples</title>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/20_samples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/20_samples/</guid>
+      <description>Samples Sample content can be found here https://github.com/aws-samples/aws-modernization-workshop-base * content directory - content for creating an account and Cloud9 instance. Don&amp;rsquo;t forget the images in static/images * samples directory is CloudFormation, CodeBuild, and other samples. The CloudFormation folder is available publicly at https://modernization-workshop-bucket.s3-us-west-2.amazonaws.com/cfn/ so you can leverage existing templates for nesting and one-click deployments.
+Example workshops Feel free to use the content and edit to your satisfaction
+ https://atlassian.awsworkshop.io/ and associated repo https://github.</description>
+    </item>
+    
+  </channel>
+</rss>
