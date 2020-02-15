@@ -9,18 +9,18 @@ Parameters:
     ConstraintDescription: must be a valid DNS name.
   DomainName:
     Type: String
-    Default: modernize.awsworkshop.io
+    Default: awsworkshop.io
     Description: The DNS name of an existing Amazon Route 53 hosted zone 
     AllowedPattern: (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)
     ConstraintDescription: must be a valid DNS zone name.
   CertificateArn:
     Type: String
-    Default:  arn:aws:acm:us-east-1:755152575036:certificate/72b960a9-66b1-43d4-a390-92b16688b851
+    Default:  arn:aws:acm:us-east-1:497025854095:certificate/491991ad-c0b4-4793-98a1-dee54cc3a095
     Description: ARN of a certificate in us-east-1 as its needed for a CloudFront Distribution
     AllowedPattern: "arn:aws:acm:.*"
   OriginAccessID:
     Type: String
-    Default: E3GM9LXDMNO4MJ
+    Default: E23ZJHO0JEB5ON
     Description: CloudFront Origin Access ID
 
 Resources:
@@ -41,7 +41,7 @@ Resources:
           Effect: Allow
           Resource: !Join ['', ['arn:aws:s3:::', !Ref 'WebsiteBucket', /*]]
           Principal:
-            CanonicalUser: 84ea00d841b3604d2bc8cf6e397c6c3f2684eb73f1e2a937c3044dab74ee6b75cd245c294e5ae3d7eabaa589f3ad7e91
+            CanonicalUser: 42e93f3a60683439eed54df135350cf7b2eaca4dcdf8099cb1d74c4c185bc11ac4f2cbad48bc74b3c609eaa6b983096d
           
   WebsiteCloudFront:
     Type: AWS::CloudFront::Distribution
@@ -75,6 +75,9 @@ Resources:
         ViewerCertificate:
           AcmCertificateArn: !Ref CertificateArn
           SslSupportMethod: sni-only  
+        Logging: 
+          Bucket: "access-logs-modernization-workshops.s3.amazonaws.com"
+          Prefix: !Join ['', [ !Ref 'WorkshopHostname', '/']]
         
   WebsiteDNSName:
     Type: AWS::Route53::RecordSet
