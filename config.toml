@@ -5,7 +5,8 @@ defaultContentLanguage = "en"
 title = "AWS Modernization Workshop Sample"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
-defaultContentLanguageInSubdir= true
+defaultContentLanguageInSubdir= "true"
+uglyurls = "true"
 
 [params]
   # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page. 
