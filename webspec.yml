@@ -18,6 +18,7 @@ phases:
       - git checkout -f "$CODEBUILD_RESOLVED_SOURCE_VERSION"
       - git submodule init
       - git submodule update --recursive
+      - gem install asciidoctor
       - echo Install Hugo
       - curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | grep "browser_download_url.*hugo_[^extended].*_Linux-64bit\.tar\.gz" | cut -d ":" -f 2,3 | tr -d \" | wget -qi -  
       - HUGO_TAR="$(find . -name "*Linux-64bit.tar.gz")"
