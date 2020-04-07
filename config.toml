@@ -64,5 +64,7 @@ name = "<i class='fas fa-users'></i> Partner Solutions Finder"
 url = "https://aws.amazon.com/partners/find/"
 weight = 30
 
-[blackfriday]
-hrefTargetBlank = true
+[markup]
+  defaultMarkdownHandler = "blackfriday"
+  [markup.blackFriday]
+    hrefTargetBlank = true
