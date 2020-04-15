@@ -126,8 +126,10 @@ Resources:
             Value: !Ref AWS::Region
           - Name: FULL_REPO_URL
             Value: !Ref FullRepoURL
-          - Name: WEB_SITE_BUCKET  
-            Value: !Ref WebsiteBucket  
+          - Name: WEB_SITE_BUCKET
+            Value: !Ref WebsiteBucket
+          - Name: CLOUDFRONT_DISTRO_ID
+            Value: !Ref CloudFrontDistroId
         PrivilegedMode: true
       Name: !Join ['', [!Ref 'ProjectName', '-Workshop-website']]
       ServiceRole: !Ref CodeBuildServiceRole
