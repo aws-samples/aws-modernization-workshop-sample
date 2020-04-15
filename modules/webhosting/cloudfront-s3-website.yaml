@@ -32,7 +32,6 @@ Resources:
     
   WebsiteBucketPolicy:
     Type: AWS::S3::BucketPolicy
-    DependsOn: WebsiteBucket
     Properties:
       Bucket: !Ref 'WebsiteBucket'
       PolicyDocument:
@@ -45,8 +44,6 @@ Resources:
           
   WebsiteCloudFront:
     Type: AWS::CloudFront::Distribution
-    DependsOn:
-    - WebsiteBucket
     Properties:
       DistributionConfig:
         Comment: !Join [' ', [!Ref 'WebsiteBucket', "Workshop Distribution"]]
@@ -81,7 +78,6 @@ Resources:
         
   WebsiteDNSName:
     Type: AWS::Route53::RecordSet
-    DependsOn: WebsiteCloudFront
     Properties:
       AliasTarget:
         DNSName: !GetAtt WebsiteCloudFront.DomainName
@@ -94,6 +90,9 @@ Outputs:
   BucketName:
     Value: !Ref 'WebsiteBucket'
     Description: Name of S3 bucket to hold website content
+  CloudFrontDistroId:
+    Value: !Ref WebsiteCloudFront
+    Description: CloudFront distribution ID
   CloudfrontEndpoint:
     Value: !GetAtt [WebsiteCloudFront, DomainName]
     Description: Endpoint for CloudFront distribution

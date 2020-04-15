@@ -2,8 +2,11 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: This template will launch the Modernization Workshop CI/CD Pipeline.
 
 # It should only be necessary to update the parameters
-# run this stack as below but sub for {WORKSHOP NAME} with the workshop/company name
+# run this stack as below but sub for {WORKSHOP NAME} with the workshop/company name and set the value
+# of CloudFrontDistroId resulting from the S3 + CloudFront CloudFormation template.
+
 # aws cloudformation create-stack --stack-name {WORKSHOP NAME}-Website-Pipeline --template-body file://pipeline.yaml --capabilities CAPABILITY_NAMED_IAM
+
 Parameters:
   ProjectName:
     Type: String
@@ -12,7 +15,11 @@ Parameters:
   WebsiteBucket:
     Type: String
     Description: Website S3 bucket name
-    Default: xxxxxxx.modernize.awsworkshop.io  
+    Default: xxxxxxx.awsworkshop.io 
+  CloudFrontDistroId:
+    Type: String
+    Description: CloudFront distribution ID 
+    Default: yyyyyyy
   GitHubRepo:
     Type: String
     Description: repo name
@@ -62,6 +69,10 @@ Resources:
                   - s3:PutObject
                   - s3:GetObjectVersion
                   - s3:ListBucket
+              - Effect: Allow
+                Action:
+                  - cloudfront:CreateInvalidation
+                Resource: !Sub arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistroId}
 
   CodePipelineServiceRole:
     Type: AWS::IAM::Role
@@ -135,7 +146,7 @@ Resources:
               ActionTypeId:
                 Category: Source
                 Owner: ThirdParty
-                Version: 1
+                Version: '1'
                 Provider: GitHub
               Configuration:
                 Owner: !Ref GitHubOwner
@@ -152,7 +163,7 @@ Resources:
               ActionTypeId:
                 Category: Build
                 Owner: AWS
-                Version: 1
+                Version: '1'
                 Provider: CodeBuild
               Configuration:
                 ProjectName: !Ref CodeBuildProject
@@ -168,7 +179,7 @@ Resources:
       Authentication: GITHUB_HMAC
       AuthenticationConfiguration:
         SecretToken: '{{resolve:secretsmanager:GitHub/WorkshopOwnerToken:SecretString:OwnerToken}}'
-      RegisterWithThirdParty: 'true'
+      RegisterWithThirdParty: true
       Filters:
       - JsonPath: "$.ref"
         MatchEquals: refs/heads/{Branch}
