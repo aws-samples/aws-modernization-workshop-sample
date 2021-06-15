@@ -1,0 +1,18 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: This template will create a user for CI/CD services to deploy resources into AWS. DO NOT use this for production, too permissive.  
+
+Resources:
+  PipelineUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: pipeline-user
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
+               
+Outputs:
+  PipelineUserArn:
+    Description: "Pipelline User ARN"  
+    Value: !GetAtt PipelineUser.Arn
+    Export: 
+      Name: PipelineUserArn

@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: This AWS CloudFormation Template configures Jira Quickstart 
+
+Resources: 
+  ModernizationJIRA:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://aws-quickstart.s3.amazonaws.com/quickstart-atlassian-jira/templates/quickstart-jira-dc-with-vpc.template.yaml
+      Parameters:
+        DBMasterUserPassword: IIamRoot1!
+        DBPassword: IIamRoot1!
+        AccessCIDR: 0.0.0.0/0
+        AvailabilityZones: us-west-2a,us-west-2b
+        JiraVersion: 8.9.0
+
+Outputs: {}

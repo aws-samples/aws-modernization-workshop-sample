@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: This AWS CloudFormation Template configures a VPC, role, and EKS. 
+
+Resources:
+
+  ModernizationVPC:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://modernization-workshop-bucket.s3-us-west-2.amazonaws.com/cfn/vpc/vpc.yaml
+      Parameters:
+        EnvironmentName: Workshop
+
+  ModernizationRole:
+    DependsOn: ModernizationVPC
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://modernization-workshop-bucket.s3-us-west-2.amazonaws.com/cfn/iam/modernization-role.yaml     
+
+  ModernizationEKS:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://aws-quickstart.s3.us-east-1.amazonaws.com/quickstart-amazon-eks/templates/amazon-eks-master-existing-vpc.template.yaml
+      Parameters:
+        RemoteAccessCIDR: 0.0.0.0/0
+        NodeInstanceType: m5.xlarge
+        VPCID: !GetAtt ModernizationVPC.Outputs.VPC
+        PublicSubnet1ID: !GetAtt ModernizationVPC.Outputs.PublicSubnet1
+        PublicSubnet2ID: !GetAtt ModernizationVPC.Outputs.PublicSubnet2
+        PrivateSubnet1ID: !GetAtt ModernizationVPC.Outputs.PrivateSubnet1
+        PrivateSubnet2ID: !GetAtt ModernizationVPC.Outputs.PrivateSubnet2
+        KeyPairName: ee-default-keypair
+        AdditionalEKSAdminRoleArn: !GetAtt ModernizationRole.Outputs.Cloud9RoleArn
+        ProvisionBastionHost: Disabled
+        EKSPublicAccessEndpoint: Enabled
+
+Outputs: {}

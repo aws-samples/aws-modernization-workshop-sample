@@ -1,0 +1,46 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: This template will create a modernization role.  Primarily used for EKS and cloud9.
+
+Resources:
+  Cloud9InstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+      RoleName: "modernization-admin"
+  
+  Cloud9InstancePolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: Cloud9AdminAccessPolicy
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Action: '*'
+            Resource: '*'
+      Roles:
+        - !Ref Cloud9InstanceRole
+  
+  Cloud9InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: "modernization-admin"
+      Path: /
+      Roles:
+        - !Ref Cloud9InstanceRole
+        
+        
+Outputs:
+  Cloud9RoleArn:
+    Description: "Cloud9 Role Arn"  
+    Value: !GetAtt  Cloud9InstanceRole.Arn
+    Export: 
+      Name: Cloud9RoleArn

@@ -1,0 +1,216 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: Creates a role called TeamRole to test Event Engine
+
+Resources:
+  TeamRole:
+    Type: AWS::IAM::Role
+    Properties: 
+      AssumeRolePolicyDocument: 
+        Version: "2012-10-17"
+        Statement:
+          -
+            Effect: "Allow"
+            Principal:
+              AWS: !Sub "arn:aws:iam::${AWS::AccountId}:root"
+            Action: 
+              - "sts:AssumeRole"
+      Description: Team Role to test workshop content
+      MaxSessionDuration: 43200
+      RoleName: TeamRole
+      Policies:
+        - PolicyName: team_role_policy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - 
+                Resource: "*"
+                Action:
+                - access-analyzer:*
+                - acm-pca:*
+                - acm:*
+                - amplify:*
+                - apigateway:*
+                - application-autoscaling:*
+                - applicationautoscaling:*
+                - appmesh:*
+                - appstream:*
+                - appsync:*
+                - appconfig:*
+                - arsenal:*
+                - artifact:*
+                - athena:*
+                - autoscaling-plans:*
+                - autoscaling:*
+                - awsconnector:*
+                - backup:*
+                - batch:*
+                - ce:*
+                - cloud9:*
+                - cloudformation:*
+                - cloudfront:*
+                - cloudmap:*
+                - cloudtrail:*
+                - cloudwatch:*
+                - codebuild:*
+                - codecommit:*
+                - codedeploy:*
+                - codeguru-profiler:*
+                - codeguru-reviewer:*
+                - codepipeline:*
+                - codestar:*
+                - cognito-identity:*
+                - cognito-idp:*
+                - cognito-sync:*
+                - comprehend:*
+                - comprehendmedical:*
+                - config:*
+                - dataexchange:*
+                - datapipeline:*
+                - datasync:*
+                - deepracer:*
+                - dms:*
+                - ds:*
+                - dynamodb:*
+                - ec2-instance-connect:SendSSHPublicKey
+                - ec2:*
+                - ec2messages:*
+                - ecr:*
+                - ecs:*
+                - eks:*
+                - elastic-inference:*
+                - elasticache:*
+                - elasticbeanstalk:*
+                - elasticfilesystem:*
+                - elasticloadbalancing:*
+                - elasticmapreduce:*
+                - emr:*
+                - es:*
+                - events:*
+                - execute-api:*
+                - firehose:*
+                - forecast:*
+                - fsx:*
+                - gamelift:*
+                - glacier:*
+                - globalaccelerator:*
+                - glue:*
+                - greengrass:*
+                - guardduty:*
+                - iam:*
+                - imagebuilder:*
+                - inspector:*
+                - iot:*
+                - freertos:*
+                - signer:*
+                - iotanalytics:*
+                - iotevents:*
+                - iotthingsgraph:*
+                - kafka:*
+                - kendra:*
+                - kinesis:*
+                - kinesisanalytics:*
+                - kinesisanalyticsv2:*
+                - kinesisvideo:*
+                - kms:*
+                - lakeformation:*
+                - lambda:*
+                - lex:*
+                - lightsail:*
+                - logs:*
+                - managedblockchain:*
+                - mediaconnect:*
+                - mediaconvert:*
+                - medialive:*
+                - mediapackage-vod:*
+                - mediapackage:*
+                - mediastore:*
+                - mediatailor:*
+                - mgh:*
+                - mobiletargeting:*
+                - mq:*
+                - personalize:*
+                - pi:*
+                - pinpoint:*
+                - polly:*
+                - pricing:*
+                - qldb:*
+                - quicksight:*
+                - rds-data:*
+                - rds-db:*
+                - rds:*
+                - redshift:*
+                - rekognition:*
+                - resource-groups:*
+                - resource-explorer:*
+                - robomaker:*
+                - route53:*
+                - route53domains:DisableDomainAutoRenew
+                - route53domains:ListDomains
+                - route53resolver:*
+                - s3:*
+                - sagemaker:*
+                - schemas:*
+                - secretsmanager:*
+                - securityhub:*
+                - serverlessrepo:*
+                - servicecatalog:*
+                - servicediscovery:*
+                - ses:*
+                - sesv2:*
+                - sms:*
+                - sns:*
+                - sqs:*
+                - ssm:*
+                - ssmmessages:*
+                - states:*
+                - storagegateway:*
+                - sts:*
+                - tag:*
+                - textract:*
+                - transcribe:*
+                - transfer:*
+                - translate:*
+                - trustedadvisor:*
+                - waf-regional:*
+                - waf:*
+                - wafv2:*
+                - xray:*
+                Effect: Allow
+                Sid: AllReaperSupportedServices
+                
+              - 
+                Resource:
+                - arn:aws:ec2:*:*:instance/*
+                Action: ec2:RunInstances
+                Effect: Deny
+                Sid: DenyXXLInstances  
+                Condition:
+                  StringLike:
+                    ec2:InstanceType:
+                    - "*6xlarge"
+                    - "*8xlarge"
+                    - "*10xlarge"
+                    - "*12xlarge"
+                    - "*16xlarge"
+                    - "*18xlarge"
+                    - "*24xlarge"
+                    - f1.4xlarge
+                    - x1*
+                    - z1*
+                    - "*metal"
+              
+              - 
+                Resource: "*"
+                Action:
+                - ec2:ModifyReservedInstances
+                - ec2:PurchaseHostReservation
+                - ec2:PurchaseReservedInstancesOffering
+                - ec2:PurchaseScheduledInstances
+                - rds:PurchaseReservedDBInstancesOffering
+                - dynamodb:PurchaseReservedCapacityOfferings
+                Effect: Deny
+                Sid: DontBuyReservationsPlz
+
+
+

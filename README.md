@@ -1,7 +1,6 @@
+## AWS Modernization Workshop Samples
 
+** DO NOT ** start with this repo for your workshop base. Clone repo https://github.com/aws-samples/aws-modernization-workshop-base as a starting point. 
 
-# AWSWorkshop.io base workshop 
-
-This is a base workshop.  Clone and start from this repo to create your workshop.
-
+This repo contains samples that can be used as building blocks for workshop creation.  For instructions on how to build a workshop please see https://aws-samples.github.io/aws-modernization-workshop-sample/ 
 
