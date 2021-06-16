@@ -10,6 +10,14 @@ Directory of artifacts you will add, change, delete during the course of buildin
   /
    |-content
    |---_index.md
+   |---introduction
+   |------_index.md
+   |---partner setup
+   |---module1
+   |---module2
+   |---module3
+   |---conclusion
+   |---cleanup
    |-static
    |---images
    |config.toml
@@ -17,7 +25,7 @@ Directory of artifacts you will add, change, delete during the course of buildin
 ```
 
 ## Editing 
-Hugo uses markdown to generate static html pages.  This makes it easier to create a web based workshop as all you need to do is create documents using markdown and Hugo will create the pretty html for you.  For additional information on markdown, visit the learn theme documentation page https://learn.netlify.com/en/cont/markdown/
+Hugo uses markdown to generate static HTML pages. This makes it easier to create a web based workshop as all you need to do is create documents using markdown and Hugo will create the pretty html for you.  For additional information on markdown, visit the [hugo-theme-learn theme documentation page](https://learn.netlify.com/en/cont/markdown/)
 
 #### config.toml file
 Start by editing the config.toml file. Only the Title needs to be edited at this time.
@@ -62,8 +70,9 @@ When creating additional sections or pages, copy the files and folders from anot
 
 #### Samples and building blocks
 In the repo https://github.com/aws-samples/aws-modernization-workshop-sample there are several examples and content that you can copy and reuse in your workshop. 
-* content directory - Various building blocks such as an account and Cloud9 instance.  Don't forget the images in static/images
-* code-samples directory is CloudFormation, CodeBuild, and other samples.  The CloudFormation folder is available publicly at https://modernization-workshop-bucket.s3-us-west-2.amazonaws.com/cfn/ so you can leverage existing templates for nesting and one-click deployments. 
+
+* Content directory: various building blocks such as an account and Cloud9 instance. Don't forget the images in static/images
+* Code-samples directory is CloudFormation, CodeBuild, and other samples.  The CloudFormation folder is available publicly at https://modernization-workshop-bucket.s3-us-west-2.amazonaws.com/cfn/ so you can leverage existing templates for nesting and one-click deployments. 
 
 Feel free to leverage these samples in your solution.  **Note** this is a workshop so samples are not meant to be best practice, but more for educational purposes only.  So if your workshop uses an RDS instance there is no reason to setup replication, backups, and everything else that goes along with making a robust solution, this is of course unless your workshop is on building robust fault tolerant solutions ;)
 

@@ -12,7 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/10_plan/1_story/</guid>
-      <description>Think about what you want to accomplish and how you want to educate users about your product. What is the use case or problem that your product solves for the end user and develop a story around it. Two things to have in the back of your mind while you think about this: 1. Customers don&amp;rsquo;t buy products they buy solutions to their problems and 2. Make learning fun, have a nice story that can entertain them while educating them at the same time.</description>
+      <description>Think about what you want to accomplish and how you want to educate users about your product. What is the use case or problem that your product solves for the end user and develop a story around it. Three things to have in the back of your mind while you think about this:
+ Customers don&amp;rsquo;t buy products, they buy solutions to their problems. So again, think about the problem/use case your solution solves.</description>
     </item>
     
     <item>
@@ -21,8 +22,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/10_plan/2_plan/</guid>
-      <description>High Level Workshop Planning  Determine the message and what you want the customer to learn. Remember to wrap your story around this so customers find it fun. Example: I want potential customers to learn how easy it is to instrument our testing product into their build pipeline.
- Think from a high level what components or systems will be needed. These are the building blocks that will save you time when you start to build the workshop.</description>
+      <description>High Level Workshop Planning  Determine what problem/use case your solution solves.  Remember to wrap your story around this so customers find it useful. For example: I want potential customers to learn how easy it is to instrument our testing product into their build pipeline.  Determine what concepts about your solution you want the customers to learn about. Think from a high level what components or systems will be needed.</description>
+    </item>
+    
+    <item>
+      <title>Types of Events</title>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/10_plan/3_event_types/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/10_plan/3_event_types/</guid>
+      <description>Self-Paced Workshops Self-Paced Workshops can be facilitated in different ways, such as the AWS Marketplace DevOps Workshop Series or having partners simply direct customers to these workshops from their webpage. Again, the benefit of creating these workshops allow anyone to go through it, whether it&amp;rsquo;s a marketed event or not. These workshops require the attendees to either have their own AWS account or create one. There will need to be instructions on how to provision certain services such as EKS clusters or databases but as it is self-paced, the attendee can complete the workshop at their leisure.</description>
     </item>
     
   </channel>

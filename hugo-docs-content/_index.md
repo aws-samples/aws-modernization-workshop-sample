@@ -6,7 +6,7 @@ weight: 1
 
 # Modernization Workshop Documentation
 
-Welcome. Here you are going to learn to plan, build, and launch an AWS Modernization Workshop. 
+Welcome to the AWS Modernization Workshop Documentation. Here you are going to learn to ideate/plan, build, and launch an AWS Modernization Workshop. 
 
 {{% notice warning %}}
 Please read this documentation in its entirety before starting to build a workshop, it will save you a lot of heartache and pain.  

@@ -21,7 +21,7 @@ Now that your workshop is ready, reach out to your PSA or SA and have them follo
 6. Site is now published.
 
 {{% notice note %}}
-Because the site has a ci/cd pipeline any future changes only requires a pull request and once approved will automatically publish the changes.
+Because the site has a CI/CD pipeline, any future changes only requires a pull request and once approved will automatically publish the changes.
 {{% /notice %}}
 
 

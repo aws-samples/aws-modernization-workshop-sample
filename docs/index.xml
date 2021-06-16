@@ -13,19 +13,18 @@
       
       <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/1_setup/</guid>
       <description>Building a workshop leverages several tools:
- Git Hugo Hugo learn theme CloudFormation templates  1. Clone Sample Repo You will need to have a little familiarity with git, if not you might want to lookup a git tutorial.
-Start by cloning the base repo and push it to a repo on your own GitHub account. Change the name of myCompany-Workshop :)
-git clone https://github.com/aws-samples/aws-modernization-workshop-base myCompany-Workshop  We use clone instead of fork as you will break this from the sample repo and change the name.</description>
+ Git Hugo Hugo learn theme CloudFormation templates  1. Clone Sample Repo AWS Modernization Workshops are powered by the Hugo Framework. Hugo uses markdown files to generate HTML assets so if your experts have experience with writing documentations on GitHub README&amp;rsquo;s, this should be very familiar!
+If not, that is also OK as there are a plethora of documentations to help out someone just starting.</description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/1_tools/</link>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/40_faqs/1_tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/1_tools/</guid>
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/40_faqs/1_tools/</guid>
       <description>Building a workshop leverages several tools to make things a bit easier:
- Git Hugo - https://gohugo.io/ Hugo learn theme - https://learn.netlify.com/en/ CloudFormation templates - https://github.com/aws-samples/aws-modernization-workshop-sample/tree/master/code-samples/cloudformation Code Build examples - https://github.com/aws-samples/aws-modernization-workshop-sample/tree/master/code-samples/codebuild Skitch - Image editing for annotations in images https://apps.apple.com/us/app/skitch-snap-mark-up-share/id425955336?mt=12 VSCode IDE - https://code.visualstudio.com/   </description>
+ Git - version control system Hugo Framework - open source static generator Hugo Learn Theme - Hugo styling CloudFormation Templates - Infrastructure as Code Code Build Examples Skitch - Image editing for annotations in images VSCode IDE   </description>
     </item>
     
     <item>
@@ -34,17 +33,18 @@ git clone https://github.com/aws-samples/aws-modernization-workshop-base myCompa
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/10_plan/1_story/</guid>
-      <description>Think about what you want to accomplish and how you want to educate users about your product. What is the use case or problem that your product solves for the end user and develop a story around it. Two things to have in the back of your mind while you think about this: 1. Customers don&amp;rsquo;t buy products they buy solutions to their problems and 2. Make learning fun, have a nice story that can entertain them while educating them at the same time.</description>
+      <description>Think about what you want to accomplish and how you want to educate users about your product. What is the use case or problem that your product solves for the end user and develop a story around it. Three things to have in the back of your mind while you think about this:
+ Customers don&amp;rsquo;t buy products, they buy solutions to their problems. So again, think about the problem/use case your solution solves.</description>
     </item>
     
     <item>
       <title>Edit and Build</title>
-      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/10_editing/</link>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/2_editing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/10_editing/</guid>
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/2_editing/</guid>
       <description>Directory Tree Directory of artifacts you will add, change, delete during the course of building a workshop.
-/ |-content |---_index.md |-static |---images |config.toml  Editing Hugo uses markdown to generate static html pages. This makes it easier to create a web based workshop as all you need to do is create documents using markdown and Hugo will create the pretty html for you. For additional information on markdown, visit the learn theme documentation page https://learn.</description>
+/ |-content |---_index.md |---introduction |------_index.md |---partner setup |---module1 |---module2 |---module3 |---conclusion |---cleanup |-static |---images |config.toml  Editing Hugo uses markdown to generate static HTML pages. This makes it easier to create a web based workshop as all you need to do is create documents using markdown and Hugo will create the pretty html for you.</description>
     </item>
     
     <item>
@@ -53,25 +53,33 @@ git clone https://github.com/aws-samples/aws-modernization-workshop-base myCompa
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/10_plan/2_plan/</guid>
-      <description>High Level Workshop Planning  Determine the message and what you want the customer to learn. Remember to wrap your story around this so customers find it fun. Example: I want potential customers to learn how easy it is to instrument our testing product into their build pipeline.
- Think from a high level what components or systems will be needed. These are the building blocks that will save you time when you start to build the workshop.</description>
+      <description>High Level Workshop Planning  Determine what problem/use case your solution solves.  Remember to wrap your story around this so customers find it useful. For example: I want potential customers to learn how easy it is to instrument our testing product into their build pipeline.  Determine what concepts about your solution you want the customers to learn about. Think from a high level what components or systems will be needed.</description>
     </item>
     
     <item>
       <title>Tips</title>
-      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/10_tips/</link>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/40_faqs/2_tips/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/10_tips/</guid>
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/40_faqs/2_tips/</guid>
       <description>Additional editing tips  Use Cloud9 for the IDE and workshop host for all participants. Having users setup their local workstations doesn&amp;rsquo;t work very well and often contributes to a poor user experience. Review the flow of other workshops. To create a new page, copy another document and rename it. The name is only important to the builders, but the actual name that shows in the navigation is the title at the top of the document.</description>
     </item>
     
     <item>
-      <title>Samples</title>
-      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/20_samples/</link>
+      <title>Types of Events</title>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/10_plan/3_event_types/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/35_extras/20_samples/</guid>
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/10_plan/3_event_types/</guid>
+      <description>Self-Paced Workshops Self-Paced Workshops can be facilitated in different ways, such as the AWS Marketplace DevOps Workshop Series or having partners simply direct customers to these workshops from their webpage. Again, the benefit of creating these workshops allow anyone to go through it, whether it&amp;rsquo;s a marketed event or not. These workshops require the attendees to either have their own AWS account or create one. There will need to be instructions on how to provision certain services such as EKS clusters or databases but as it is self-paced, the attendee can complete the workshop at their leisure.</description>
+    </item>
+    
+    <item>
+      <title>Samples</title>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/40_faqs/3_samples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/40_faqs/3_samples/</guid>
       <description>Samples Sample content can be found here https://github.com/aws-samples/aws-modernization-workshop-sample * content directory - content for creating an account and Cloud9 instance. Don&amp;rsquo;t forget the images in static/images * samples directory is CloudFormation, CodeBuild, and other samples. The CloudFormation folder is available publicly at https://modernization-workshop-bucket.s3-us-west-2.amazonaws.com/cfn/ so you can leverage existing templates for nesting and one-click deployments.
 Example workshops Feel free to use the content and edit to your satisfaction
  https://atlassian.awsworkshop.io/ and git repo https://github.</description>
@@ -79,20 +87,20 @@ Example workshops Feel free to use the content and edit to your satisfaction
     
     <item>
       <title>Testing</title>
-      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/20_testing/</link>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/3_testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/20_testing/</guid>
-      <description>Testing Once you feel your workshop is complete, have a few other people test it. At this point you will probably need technical people to test it as the flow may be a little rough. hugo with no options will generate an html site in /public. But it&amp;rsquo;s also fairly easy to run hugo server and connect to localhost:1313 to view the workshop.
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/3_testing/</guid>
+      <description>Testing As you are creating your workshop, test through the steps you are writing down for the customers. This will ensure each part of the workshop is functional and working. When you feel like the workshop is technically complete, have a few other technical people test it. For now, have them run hugo server and connect to localhost:1313 to view the workshop and follow the steps.
 Once you have ironed out flow issues, have a few non-technical check the site for grammatical errors.</description>
     </item>
     
     <item>
       <title>Publish</title>
-      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/30_publish/</link>
+      <link>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/4_publish/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/30_publish/</guid>
+      <guid>https://aws-samples.github.io/aws-modernization-workshop-sample/20_build/4_publish/</guid>
       <description>Cleanup  Remove the directory docs, hugo-docs-content, samples, and public.
  Cleanup any unused artifacts, be sure to look in static/images  Publish Now that your workshop is ready, reach out to your PSA or SA and have them follow the process for getting your workshop published.
 High level steps  The SA will review your submission and makes sure everything works.
