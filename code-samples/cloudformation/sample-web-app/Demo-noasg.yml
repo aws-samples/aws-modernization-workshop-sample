@@ -70,9 +70,9 @@ Mappings:
       Arch: NATHVM64
   AWSRegionArch2AMI:
     us-east-1:
-      HVM64: ami-0d5eff06f840b45e9
+      HVM64: ami-0c2b8ca1dad447f8a
     us-west-2:
-      HVM64: ami-0cf6f5c8a62fa5da6
+      HVM64: ami-083ac7c7ecf9bb9b0
 Resources:
   MyEC2Instance: 
     Type: AWS::EC2::Instance
@@ -87,11 +87,26 @@ Resources:
       KeyName: !Ref KeyName
       UserData:
         Fn::Base64: !Sub |
-          #!/bin/bash -xe
-          sudo yum update -y aws-cfn-bootstrap
-          sudo amazon-linux-extras install -y nginx1 
-          sudo systemctl start nginx
-          sudo systemctl enable nginx
+          #!/bin/bash
+          yum update -y
+          amazon-linux-extras install epel -y
+          yum install nginx git gcc build-essential python3-pip python3-devel python3-setuptools -y
+          mkdir /var/www
+          git clone https://github.com/mkriaf/SvcStopApp.git /var/www
+          cd /var/www
+          python3 -m venv svcstopappenv
+          source svcstopappenv/bin/activate
+          pip3 install -r requirements.txt && deactivate
+          cp /var/www/config/svcstopapp.service /etc/systemd/system
+          usermod -a -G nginx ec2-user
+          chmod -R 755 /var/www
+          chown -R ec2-user:nginx /var/www
+          systemctl start svcstopapp.service
+          systemctl enable svcstopapp.service
+          cp config/nginx.conf /etc/nginx/nginx.conf
+          cp config/svcstopapp.conf /etc/nginx/conf.d/svcstopapp.conf
+          systemctl start nginx
+          systemctl enable nginx
       SecurityGroupIds:
             - !GetAtt "InstanceSecurityGroup.GroupId"
       InstanceType: !Ref InstanceType
