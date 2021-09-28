@@ -92,7 +92,7 @@ Resources:
           amazon-linux-extras install epel -y
           yum install nginx git gcc build-essential python3-pip python3-devel python3-setuptools -y
           mkdir /var/www
-          git clone https://github.com/mkriaf/SvcStopApp.git /var/www
+          git clone https://github.com/PagerDuty/sample-app-workshop.git /var/www
           cd /var/www
           python3 -m venv svcstopappenv
           source svcstopappenv/bin/activate
