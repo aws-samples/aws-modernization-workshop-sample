@@ -39,7 +39,11 @@ The submodules contain the hugo-theme-learn theme for the Hugo Framework.
 
 ## 3. Create and push to YOUR GitHub repo
 
-**Create a repo in your GitHub account and follow the instructions under "Push an existing repository from the command line"**
+To make sure you won't face a remote repo name conflict in your project, first remove the existing remote `origin`:
+```
+git remote rm origin
+```
+Then, create a repo in your GitHub account and follow the instructions under "Push an existing repository from the command line":
 
 ## 4. Install Hugo
 If you're using a Mac, go to your terminal:
